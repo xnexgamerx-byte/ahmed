@@ -7,8 +7,7 @@
 
   /* ---- معلومات التواصل: بدّلها من هنا (وكذلك في صفحات HTML) ---- */
   var SITE = {
-    whatsapp: '9647725166661',            // رقم واتساب بصيغة دولية بدون +
-    email: 'info@zajel-express.com'
+    whatsapp: '9647725166661'             // رقم واتساب بصيغة دولية بدون +
   };
 
   var $  = function (s, c) { return (c || document).querySelector(s); };
@@ -123,19 +122,6 @@
       }
       window.open('https://wa.me/' + SITE.whatsapp + '?text=' + text, '_blank', 'noopener');
     });
-
-    var mailBtn = $('#mailFallback');
-    if (mailBtn) {
-      mailBtn.addEventListener('click', function () {
-        var v = function (n) { var el = form.elements[n]; return el ? el.value.trim() : ''; };
-        var body = encodeURIComponent(
-          'الاسم: ' + v('name') + '\nالهاتف: ' + v('phone') + '\nالمحافظة: ' + v('city') +
-          '\n\n' + v('message')
-        );
-        var subject = encodeURIComponent(v('subject') || 'استفسار من موقع زاجل إكسبرس');
-        window.location.href = 'mailto:' + SITE.email + '?subject=' + subject + '&body=' + body;
-      });
-    }
   }
 
   /* ---------- 7. سنة الفوتر ---------- */

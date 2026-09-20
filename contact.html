@@ -63,7 +63,7 @@
     <div class="reveal">
       <span class="eyebrow">أرسل رسالتك</span>
       <h2 class="title">خبّرنا بطلبك ونرجع لك</h2>
-      <p class="lead">عبّي النموذج وراح تنفتح لك نافذة واتساب ورسالتك جاهزة — أسرع طريقة توصلنا بيها.</p>
+      <p class="lead">عبّي النموذج وراح تنفتح لك نافذة واتساب ورسالتك جاهزة — أسرع طريقة توصلنا بيها، بدون تسجيل ولا انتظار.</p>
 
       <form class="form" id="contactForm" style="margin-top:26px">
         <div class="grid grid-2" style="gap:16px">
@@ -99,10 +99,7 @@
           <textarea id="message" name="message" required placeholder="اكتب تفاصيل طلبك: نوع البضاعة، عدد الطلبات اليومية، المنطقة…"></textarea>
         </div>
         <div class="form-note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg><span>ما نحتاج أي معلومات حساسة مثل كلمات المرور أو بيانات البطاقة — الاسم والرقم وتفاصيل الطلب تكفي.</span></div>
-        <div class="grid grid-2" style="gap:12px">
-          <button class="btn btn-brand btn-block" type="submit"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1s-.5-.1-.7.2-.8 1-.9 1.2-.3.2-.6.1a8.2 8.2 0 0 1-2.4-1.5 9 9 0 0 1-1.7-2.1c-.2-.3 0-.5.1-.6l.5-.6.3-.5v-.5l-.9-2.2c-.3-.6-.5-.5-.7-.5h-.6a1.2 1.2 0 0 0-.9.4A3.6 3.6 0 0 0 5.9 9c0 1.5 1.1 3 1.3 3.2s2.2 3.3 5.3 4.6a17 17 0 0 0 1.8.7 4.3 4.3 0 0 0 2 .1 3.2 3.2 0 0 0 2.1-1.5 2.6 2.6 0 0 0 .2-1.5zM12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3.1.8.8-3-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg> إرسال عبر واتساب</button>
-          <button class="btn btn-outline btn-block" type="button" id="mailFallback"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m4 7 8 5 8-5"/></svg> إرسال بالبريد</button>
-        </div>
+        <button class="btn btn-brand btn-block" type="submit"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1s-.5-.1-.7.2-.8 1-.9 1.2-.3.2-.6.1a8.2 8.2 0 0 1-2.4-1.5 9 9 0 0 1-1.7-2.1c-.2-.3 0-.5.1-.6l.5-.6.3-.5v-.5l-.9-2.2c-.3-.6-.5-.5-.7-.5h-.6a1.2 1.2 0 0 0-.9.4A3.6 3.6 0 0 0 5.9 9c0 1.5 1.1 3 1.3 3.2s2.2 3.3 5.3 4.6a17 17 0 0 0 1.8.7 4.3 4.3 0 0 0 2 .1 3.2 3.2 0 0 0 2.1-1.5 2.6 2.6 0 0 0 .2-1.5zM12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3.1.8.8-3-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg> إرسال عبر واتساب</button>
         <p class="form-note" id="formStatus" hidden role="status"></p>
       </form>
     </div>
@@ -113,7 +110,6 @@
       <div class="card" style="margin-top:24px">
         <ul class="info-list">
           <li class="info"><span class="info__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h3l2 5-2.5 1.5a12 12 0 0 0 6 6L16 13l5 2v3a2 2 0 0 1-2.2 2A17 17 0 0 1 4 5.2 2 2 0 0 1 6 3z"/></svg></span><span><b>الهاتف / واتساب</b><a href="tel:+9647725166661" dir="ltr">+964 772 516 6661</a></span></li>
-          <li class="info"><span class="info__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m4 7 8 5 8-5"/></svg></span><span><b>البريد الإلكتروني</b><a href="mailto:info@zajel-express.com">info@zajel-express.com</a></span></li>
           <li class="info"><span class="info__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg></span><span><b>العنوان</b><span>بغداد — المنصور، شارع ١٤ رمضان</span></span></li>
           <li class="info"><span class="info__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><span><b>أوقات الدوام</b><span>السبت – الخميس: ٩:٠٠ ص – ٩:٠٠ م<br>الجمعة: الحالات المستعجلة حسب الاتفاق</span></span></li>
         </ul>
@@ -252,7 +248,6 @@
         <h4>تواصل معنا</h4>
         <ul class="info-list">
           <li class="info"><span class="info__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h3l2 5-2.5 1.5a12 12 0 0 0 6 6L16 13l5 2v3a2 2 0 0 1-2.2 2A17 17 0 0 1 4 5.2 2 2 0 0 1 6 3z"/></svg></span><span><b>الهاتف / واتساب</b><a href="tel:+9647725166661" dir="ltr">+964 772 516 6661</a></span></li>
-          <li class="info"><span class="info__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m4 7 8 5 8-5"/></svg></span><span><b>البريد الإلكتروني</b><a href="mailto:info@zajel-express.com">info@zajel-express.com</a></span></li>
           <li class="info"><span class="info__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg></span><span><b>العنوان</b><span>بغداد — المنصور، شارع ١٤ رمضان</span></span></li>
           <li class="info"><span class="info__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><span><b>أوقات الدوام</b><span>السبت – الخميس: ٩:٠٠ ص – ٩:٠٠ م</span></span></li>
         </ul>

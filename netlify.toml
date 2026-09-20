@@ -1,0 +1,26 @@
+# إعدادات نشر موقع زاجل إكسبرس على Netlify
+# الموقع ملفات ثابتة — ما يحتاج أمر بناء ولا تنصيب حزم.
+
+[build]
+  publish = "."
+
+# ترويسات أمان لكل الصفحات
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "SAMEORIGIN"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "geolocation=(), microphone=(), camera=()"
+
+# صفحات HTML: تتحدّث فوراً عند أي تعديل
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+# الصور والستايل والسكربت: كاش يوم واحد
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
