@@ -1,0 +1,15 @@
+# ملفات ما تنرفع للاستضافة (Cloudflare Workers/Pages)
+# مهم: بدون هذا الملف راح ينرفع مجلد .git كامل كملفات موقع!
+.git
+.git/**
+.wrangler
+.wrangler/**
+node_modules
+node_modules/**
+.gitignore
+.assetsignore
+.nojekyll
+wrangler.jsonc
+wrangler.toml
+netlify.toml
+*.md

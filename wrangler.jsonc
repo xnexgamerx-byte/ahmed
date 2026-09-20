@@ -1,0 +1,23 @@
+{
+  // إعدادات نشر موقع زاجل إكسبرس على Cloudflare
+  // الاسم لازم يبقى نفسه حتى يتحدّث نفس الموقع بدل ما ينفتح موقع جديد
+  "name": "ahmed",
+  "compatibility_date": "2026-09-18",
+
+  // رابط workers.dev المجاني مفعّل
+  "workers_dev": true,
+
+  // إطفاء روابط المعاينة: تمنع بقاء النسخ القديمة متاحة على روابط منفصلة
+  "preview_urls": false,
+
+  "observability": {
+    "enabled": true
+  },
+
+  "assets": {
+    // ملفات الموقع بجذر المستودع، والاستثناءات بملف .assetsignore
+    "directory": ".",
+    // أي رابط غلط يعرض صفحة 404 مال الموقع
+    "not_found_handling": "404-page"
+  }
+}

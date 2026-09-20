@@ -28,7 +28,8 @@ assets/css/style.css    كل الستايل (المتغيّرات بأعلى ا�
 assets/js/main.js       القائمة، الأكورديون، الحركات، العدّادات، نموذج واتساب
 assets/img/             اللوغو والأيقونات والرسومات
 robots.txt · sitemap.xml · favicon.png · 404.html
-netlify.toml · _headers      إعدادات النشر (ترويسات أمان وكاش)
+netlify.toml · _headers      ترويسات الأمان والكاش
+wrangler.jsonc · .assetsignore  إعدادات النشر على Cloudflare
 ```
 
 ## 🚀 التشغيل محلياً
@@ -146,19 +147,24 @@ grep -rl "9647725166661" . --include="*.html" --include="*.js" | xargs sed -i "s
 
 **التوصية:** Cloudflare Pages — نطاق غير محدود، مسموح تجارياً، وسيرفراتها قريبة من العراق فتفتح أسرع.
 
-### Cloudflare Pages
+### Cloudflare (المستعملة حالياً)
 
-1. سجّل بحساب مجاني على [dash.cloudflare.com](https://dash.cloudflare.com) ثم **Workers & Pages → Create → Pages → Connect to Git**.
-2. اختر هذا المستودع والفرع.
-3. الإعدادات:
+الموقع منشور على Cloudflare Workers ويتحدّث تلقائياً مع كل `git push`.
 
-| الحقل | القيمة |
-|---|---|
-| Framework preset | `None` |
-| Build command | (اتركه فاضي) |
-| Build output directory | `/` |
+الإعدادات كلها بملف **`wrangler.jsonc`** بجذر المشروع:
 
-4. **Save and Deploy** — خلال دقيقة يطلع الرابط.
+| الإعداد | القيمة | ليش |
+|---|---|---|
+| `name` | `ahmed` | اسم المشروع — **لا تغيّره** إلا إذا تريد رابط جديد |
+| `assets.directory` | `.` | ملفات الموقع بجذر المستودع |
+| `assets.not_found_handling` | `404-page` | أي رابط غلط يعرض `404.html` مال الموقع |
+| `preview_urls` | `false` | يمنع بقاء النسخ القديمة متاحة على روابط منفصلة |
+
+> ⚠️ **ملف `.assetsignore` ضروري ولا تحذفه.** بدونه Cloudflare يرفع **مجلد `.git` كامل** ضمن ملفات الموقع، ويصير تأريخ المشروع كله متاح للعموم على الإنترنت.
+
+**لتغيير اسم الرابط** (مثلاً من `ahmed` إلى `zajel`): غيّر `name` بملف `wrangler.jsonc` وارفع — بس انتبه إن الرابط القديم ينقطع ويبقى مشروع قديم فاضي بحسابك لازم تحذفه يدوياً.
+
+**لإنشاء مشروع جديد على Cloudflare:** Workers & Pages → Create → **Import a repository**، واختر المستودع. أمر البناء يبقى `npx wrangler deploy`.
 
 ### Netlify
 
