@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 540" role="img" aria-labelledby="ht">
+  <title id="ht">مسار توصيل شحنة من المخزن إلى باب العميل</title>
+  <defs>
+    <linearGradient id="panel" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity=".09"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity=".02"/>
+    </linearGradient>
+    <linearGradient id="road" x1="1" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FF503F"/><stop offset="1" stop-color="#FF8A6F"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#F6F2EF"/>
+    </linearGradient>
+    <filter id="soft" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="14" stdDeviation="16" flood-color="#000" flood-opacity=".35"/>
+    </filter>
+  </defs>
+
+  <!-- لوحة الخريطة -->
+  <rect x="42" y="48" width="536" height="404" rx="34" fill="url(#panel)" stroke="#ffffff" stroke-opacity=".14" stroke-width="2"/>
+  <g stroke="#ffffff" stroke-opacity=".07" stroke-width="2">
+    <path d="M42 160h536M42 268h536M42 366h536"/>
+    <path d="M176 48v404M310 48v404M444 48v404"/>
+  </g>
+  <!-- كتل مدينة مبسّطة -->
+  <g fill="#ffffff" fill-opacity=".05">
+    <rect x="86" y="300" width="72" height="62" rx="10"/>
+    <rect x="366" y="112" width="96" height="58" rx="10"/>
+    <rect x="462" y="316" width="72" height="52" rx="10"/>
+  </g>
+
+  <!-- المسار -->
+  <path d="M498 372C430 372 404 300 336 292 268 284 250 208 178 196"
+        stroke="url(#road)" stroke-width="7" stroke-linecap="round" stroke-dasharray="1 22" fill="none"/>
+
+  <!-- نقطة الانطلاق -->
+  <g>
+    <circle cx="498" cy="372" r="19" fill="#FF503F" fill-opacity=".18"/>
+    <circle cx="498" cy="372" r="9" fill="#FF503F"/>
+  </g>
+
+  <!-- دبوس الوجهة -->
+  <g filter="url(#soft)">
+    <path d="M178 146c-22 0-40 18-40 40 0 29 40 66 40 66s40-37 40-66c0-22-18-40-40-40z" fill="#FF503F"/>
+    <circle cx="178" cy="186" r="14" fill="#fff"/>
+  </g>
+
+  <!-- مركبة التوصيل على المسار -->
+  <g transform="translate(286 236)" filter="url(#soft)">
+    <rect x="-6" y="0" width="92" height="52" rx="12" fill="#ffffff"/>
+    <path d="M-6 16h-34c-9 0-16 7-16 16v14c0 6 5 11 11 11h39z" fill="#FF503F"/>
+    <path d="M-16 22h-18a6 6 0 0 0-6 6v8h24z" fill="#ffffff" fill-opacity=".85"/>
+    <circle cx="-24" cy="58" r="12" fill="#14171C"/><circle cx="-24" cy="58" r="5" fill="#ffffff"/>
+    <circle cx="58" cy="58" r="12" fill="#14171C"/><circle cx="58" cy="58" r="5" fill="#ffffff"/>
+    <path d="M18 12h34v28H18z" fill="#FF503F" fill-opacity=".16"/>
+    <path d="M22 16h26l-26 20h26" stroke="#FF503F" stroke-width="5" fill="none" stroke-linejoin="round"/>
+    <g stroke="#ffffff" stroke-opacity=".5" stroke-width="4" stroke-linecap="round">
+      <path d="M96 14h26M96 30h40M96 46h20"/>
+    </g>
+  </g>
+
+  <!-- بطاقة حالة الشحنة -->
+  <g transform="translate(330 66)" filter="url(#soft)">
+    <rect width="216" height="92" rx="20" fill="url(#card)"/>
+    <rect x="18" y="22" width="48" height="48" rx="14" fill="#FFF1EE"/>
+    <path d="M30 40l12-7 12 7v14l-12 7-12-7z" fill="none" stroke="#FF503F" stroke-width="3.4" stroke-linejoin="round"/>
+    <path d="M30 40l12 7 12-7M42 47v14" stroke="#FF503F" stroke-width="3.4" stroke-linejoin="round"/>
+    <rect x="80" y="28" width="112" height="11" rx="5.5" fill="#14171C" fill-opacity=".82"/>
+    <rect x="80" y="48" width="74" height="9" rx="4.5" fill="#14171C" fill-opacity=".22"/>
+    <circle cx="176" cy="62" r="7" fill="#22B573"/>
+  </g>
+
+  <!-- صندوق طائر -->
+  <g transform="translate(92 92)" filter="url(#soft)">
+    <rect width="72" height="64" rx="14" fill="#ffffff" fill-opacity=".95"/>
+    <path d="M0 24h72" stroke="#FFDED6" stroke-width="4"/>
+    <rect x="28" y="0" width="16" height="24" fill="#FF503F"/>
+  </g>
+</svg>

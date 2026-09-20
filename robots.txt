@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# بعد حجز الدومين بدّل الرابط التالي بدومينك الحقيقي
+Sitemap: https://zajel-express.com/sitemap.xml
