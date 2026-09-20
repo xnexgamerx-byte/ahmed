@@ -27,7 +27,8 @@ contact.html            نموذج تواصل + معلومات الاتصال
 assets/css/style.css    كل الستايل (المتغيّرات بأعلى الملف)
 assets/js/main.js       القائمة، الأكورديون، الحركات، العدّادات، نموذج واتساب
 assets/img/             اللوغو والأيقونات والرسومات
-robots.txt · sitemap.xml · favicon.png · .nojekyll
+robots.txt · sitemap.xml · favicon.png · 404.html
+netlify.toml · _headers      إعدادات النشر (ترويسات أمان وكاش)
 ```
 
 ## 🚀 التشغيل محلياً
@@ -132,24 +133,44 @@ grep -rl "9647725166661" . --include="*.html" --include="*.js" | xargs sed -i "s
 
 الموقع ملفات ثابتة — ينشر على أي استضافة بدون بناء ولا إعدادات.
 
-### Netlify (الأسرع)
+### المقارنة بسرعة
 
-**الطريقة ١ — سحب وإفلات:** افتح [app.netlify.com/drop](https://app.netlify.com/drop) وارمي مجلد المشروع (أو ملف zip) — يطلع لك رابط خلال ثوانٍ.
+| الاستضافة | مجانية | علامة مائية أو إعلانات | الرابط المجاني | استعمال تجاري | النطاق الشهري |
+|---|---|---|---|---|---|
+| **Cloudflare Pages** | نعم | ❌ ما بيها | `اسمك.pages.dev` | ✅ مسموح | غير محدود |
+| **Netlify** | نعم | ❌ ما بيها | `اسمك.netlify.app` | ✅ مسموح | ١٠٠ غيغا |
+| GitHub Pages | نعم | ❌ ما بيها | `user.github.io/ahmed` | ⚠️ شروطها تمنع تشغيل موقع تجاري | ١٠٠ غيغا |
+| Vercel (خطة Hobby) | نعم | ❌ ما بيها | `اسمك.vercel.app` | ⚠️ ممنوع تجارياً بشروط الخطة المجانية | ١٠٠ غيغا |
 
-**الطريقة ٢ — ربط بـ GitHub (موصى بيها):** من Netlify اختر **Add new site → Import an existing project → GitHub**، واختر هذا الريبو. الإعدادات تنقرأ تلقائياً من `netlify.toml`:
+**ولا وحدة من هذي تحط شعار أو بانر على الموقع** — الصفحة تطلع نظيفة ١٠٠٪. الشي الوحيد إن اسم المنصة يظهر بالرابط المجاني، وينحذف بربط دومين خاص (الربط مجاني بكلهن، بس الدومين نفسه بحدود ١٠–١٥ دولار بالسنة).
+
+**التوصية:** Cloudflare Pages — نطاق غير محدود، مسموح تجارياً، وسيرفراتها قريبة من العراق فتفتح أسرع.
+
+### Cloudflare Pages
+
+1. سجّل بحساب مجاني على [dash.cloudflare.com](https://dash.cloudflare.com) ثم **Workers & Pages → Create → Pages → Connect to Git**.
+2. اختر هذا المستودع والفرع.
+3. الإعدادات:
 
 | الحقل | القيمة |
 |---|---|
-| Build command | (فاضي) |
-| Publish directory | `.` |
+| Framework preset | `None` |
+| Build command | (اتركه فاضي) |
+| Build output directory | `/` |
 
-بعدها أي `git push` ينشر النسخة الجديدة تلقائياً.
+4. **Save and Deploy** — خلال دقيقة يطلع الرابط.
 
-ملف `netlify.toml` يضبط ترويسات الأمان والكاش، وصفحة `404.html` تنعرض تلقائياً لأي رابط غلط.
+### Netlify
+
+**سحب وإفلات (بدون حساب):** افتح [app.netlify.com/drop](https://app.netlify.com/drop) وارمي مجلد المشروع أو ملف zip.
+
+**ربط بـ GitHub (نشر تلقائي):** **Add new site → Import an existing project → GitHub**، واختر المستودع. الإعدادات تنقرأ من `netlify.toml` (بدون أمر بناء، مجلد النشر `.`).
 
 ### GitHub Pages
 
 **Settings → Pages → Source: Deploy from a branch**، اختر الفرع والمجلد `/ (root)` ثم **Save**.
+
+> ملاحظة: على GitHub Pages الموقع ينفتح على مسار فرعي (`/ahmed/`)، فصفحة `404.html` روابطها راح تنكسر لأنها مبنية على جذر الدومين. Cloudflare Pages و Netlify ما عندهم هالمشكلة.
 
 ## 🧪 اللي تم فحصه
 
