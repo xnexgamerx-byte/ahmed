@@ -377,6 +377,55 @@ ul,ol{list-style:none}
 .crumbs a:hover{color:var(--brand)}
 .crumbs span{color:var(--brand)}
 
+/* ---------- 13.5 خريطة تغطية العراق ---------- */
+.map-panel{
+  position:relative;background:var(--surface);border:1px solid var(--line);
+  border-radius:var(--r-lg);padding:clamp(16px,3vw,28px);box-shadow:var(--shadow-sm);
+}
+.map-panel::after{ /* قصّة قطرية مستوحاة من حرف Z */
+  content:"";position:absolute;inset-block-start:0;inset-inline-start:0;
+  width:70px;height:70px;background:var(--brand);opacity:.1;
+  clip-path:polygon(0 0,0 100%,100% 0);border-start-start-radius:var(--r-lg);
+}
+.iraq-map{width:100%;height:auto;display:block;overflow:visible}
+.iraq-map .gov{
+  fill:url(#mapFill);stroke:#fff;stroke-width:1.6;stroke-linejoin:round;
+  transition:fill .3s var(--ease);cursor:default;
+}
+.iraq-map .gov:hover{fill:var(--ink-2)}
+.iraq-map .gov.is-hq{fill:var(--ink)}
+.iraq-map .gov-dots circle{fill:#fff;stroke:rgba(20,23,28,.22);stroke-width:1.2}
+.iraq-map .hq-pin{fill:var(--ink)}
+.iraq-map .hq-dot{fill:#fff}
+.iraq-map .hq-pulse{fill:var(--ink);opacity:.22;animation:hqpulse 2.8s var(--ease) infinite}
+@keyframes hqpulse{
+  0%{transform:scale(.5);opacity:.34}
+  70%{transform:scale(2.6);opacity:0}
+  100%{transform:scale(2.6);opacity:0}
+}
+.iraq-map .hq-card rect{fill:#fff;stroke:var(--line);stroke-width:1.5}
+.iraq-map .hq-card .hq-tail{fill:#fff}
+.iraq-map .hq-card text{text-anchor:start;direction:rtl;font-family:inherit}
+.iraq-map .hq-card .hq-t1{font-size:17px;font-weight:800;fill:var(--ink)}
+.iraq-map .hq-card .hq-t2{font-size:14px;font-weight:500;fill:var(--muted)}
+
+.chips{display:flex;flex-wrap:wrap;gap:9px;margin-top:22px}
+.chip{
+  display:inline-flex;align-items:center;background:var(--surface);border:1px solid var(--line);
+  border-radius:999px;padding:6px 15px;font-size:.88rem;font-weight:500;color:var(--ink);
+}
+.chip::before{
+  content:"";width:6px;height:6px;border-radius:2px;background:var(--brand);
+  transform:rotate(45deg);margin-inline-end:8px;flex:none;
+}
+.addr-card{
+  display:flex;gap:15px;align-items:flex-start;margin-top:26px;
+  background:var(--brand-soft);border-radius:var(--r);padding:20px 22px;
+}
+.addr-card .info__ic{background:var(--brand);color:#fff}
+.addr-card b{display:block;font-size:1.02rem;margin-bottom:4px}
+.addr-card p{color:var(--muted);font-size:.96rem}
+
 /* ---------- 14. شريط الدعوة للتواصل ---------- */
 .cta-band{
   position:relative;overflow:hidden;border-radius:var(--r-lg);
